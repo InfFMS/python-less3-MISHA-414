@@ -7,7 +7,8 @@ minus=0
 while a!=0:
     if a<0:
         minus+=1
-    count+=1
+    else:
+        count+=1
     a=int(input())
-print(count)
-print(minus)
+print(f'Положительных чисел: {count} и Отрицательных чисел: {minus}')
+
