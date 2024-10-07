@@ -23,16 +23,18 @@ def resheto(N):    # Решето эратосфена
         i += 1
 
     return [i for i in primes if i != 0]
-
-p=resheto(ma)
-count=0
-no_count=0
-for num in lst:
-    if num in p:
-        count+=1
-    else:
-        no_count+=1
-print(count, no_count)
+if ma==0:
+    print(f'Простых чисел: {0} и Составных чисел: {0}')
+else:
+    p=resheto(ma)
+    count=0
+    no_count=0
+    for num in lst:
+        if num in p:
+            count+=1
+        else:
+            no_count+=1
+    print(f'Простых чисел: {count} и Составных чисел: {no_count}')
 
 
 
