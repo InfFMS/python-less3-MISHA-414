@@ -10,5 +10,5 @@ while a!=0:
     else:
         no_two+=1
     a=int(input())
-print(two)
-print(two)
+print(f'Двузначных чисел: {two} и Других чисел: {no_two}')
+
