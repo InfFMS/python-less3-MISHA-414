@@ -2,6 +2,29 @@
 # Определить минимальное и максимальное среди простых чисел
 # (которые делятся на сами не себя и на 1).
 # Если таких чисел не было, вывести "нет".
+def resheto(N):    # Решето эратосфена
+    primes = [i for i in range(N + 1)]
+    primes[1] = 0
+    i = 2
+    while i <= N:
+        if primes[i] != 0:
+            j = i + i
+            while j <= N:
+                primes[j] = 0
+                j = j + i
+        i += 1
 
-
-
+    return [i for i in primes if i != 0]
+n=int(input())
+if n==0:
+    print('Введите число!')
+else:
+    lst=list(map(int, input().split()))
+    ma=max(lst)
+    
+    simple=resheto(ma)
+    max_simple=0
+    for num in lst:
+        if num in simple and num>max_simple:
+            max_simple=num
+    print(max_simple)        
