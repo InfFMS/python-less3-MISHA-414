@@ -1,21 +1,23 @@
 # с клавиатуры вводится число N, а затем – N целых чисел.
 # Определить минимальное и максимальное среди двузначных чисел,
 # которые делятся на 3. Если таких чисел не было, вывести "нет".
-a=int(input())
-if a==0:
-    print('Введиет не нудевое число')
+n=int(input())
+if n==0:
+    print('Введиет число')
 else:
-    ma=a
-    mi=a
-    count=0
-    while a!=0:
-        if a%3==0:
-            count+=1
-            if a>ma:
-                ma=a
-            elif a<mi:
-                mi=a        
+    mi=100
+    ma=0
+    count = 0
+    for _ in range(n):
         a=int(input())
+        if a>9 and a<100 and a%3==0:
+            count += 1
+            if a > ma:
+                ma = a
+            if a < mi:
+                mi = a
+
+
     if count==0:
         print('нет')
     else:
