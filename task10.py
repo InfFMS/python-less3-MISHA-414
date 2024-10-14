@@ -21,10 +21,18 @@ if n==0:
 else:
     lst=list(map(int, input().split()))
     ma=max(lst)
+
     
     simple=resheto(ma)
     max_simple=0
+    min_simple = ma+1
     for num in lst:
-        if num in simple and num>max_simple:
-            max_simple=num
-    print(max_simple)        
+        if num in simple:
+            if num>max_simple:
+                max_simple=num
+            elif num<min_simple:
+                min_simple = num
+    if max_simple==0:
+        print('Нет простых чисел')
+    else:
+        print(max_simple, min_simple)
